@@ -1,173 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohanraj Muthusamy, Ph.D. — Resume</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9fafb;
-      color: #111;
-      line-height: 1.6;
-    }
-    header {
-      background: #00186a;
-      color: #fff;
-      padding: 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      margin: 4px 0;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      border-bottom: 2px solid #00186a;
-      padding-bottom: 4px;
-      color: #00186a;
-    }
-    h3 {
-      margin-top: 10px;
-      color: #333;
-    }
-    ul {
-      margin: 8px 0 0 20px;
-    }
-    li {
-      margin: 6px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohanraj Muthusamy, Ph.D. | Professional Webpage</title>
+    <script src="https://kit.fontawesome.com/62a937cd26.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-bg: #2c3e50;
+            --main-bg: #ffffff;
+            --text-light: #ecf0f1;
+            --text-dark: #34495e;
+            --accent-color: #3498db;
+            --company-blue: #000080; /* Navy from your LaTeX */
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f4f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .resume-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: var(--main-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Sidebar (Left Column) */
+        .sidebar {
+            flex: 0 0 320px;
+            background-color: var(--sidebar-bg);
+            color: var(--text-light);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            border-bottom: 1px solid #4a627a;
+            padding-bottom: 15px;
+            width: 100%;
+        }
+        
+        .contact-info, .social-links {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .contact-info li, .social-links li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info i, .social-links i {
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .contact-info a, .social-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover, .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .sidebar-section {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #4a627a;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list strong {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .skills-list p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        /* Main Content (Right Column) */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .main-content section {
+            margin-bottom: 35px;
+        }
+
+        .main-content h2 {
+            font-size: 1.6rem;
+            color: var(--sidebar-bg);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            position: relative;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .item-header h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        
+        .item-header .date {
+            font-style: italic;
+            color: #7f8c8d;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        
+        .item-subheader {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .company-highlight {
+            color: var(--company-blue);
+            font-weight: bold;
+        }
+        
+        .main-content ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+
+        .main-content ul li {
+            margin-bottom: 8px;
+        }
+
+        #publications h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        #publications li {
+            margin-bottom: 12px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .resume-container {
+                flex-direction: column;
+                margin: 0;
+                min-height: 100vh;
+            }
+            .sidebar {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            .main-content {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .item-header .date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            .sidebar, .main-content {
+                padding: 20px;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Mohanraj Muthusamy, Ph.D.</h1>
-  <p>Montreal, Quebec, Canada · <a href="mailto:mohanrajmuthu90@gmail.com" style="color:#fff;">mohanrajmuthu90@gmail.com</a></p>
-  <p>Status in Canada: Open Work Permit · Status in the United States: B1/B2 Visa</p>
-</header>
+    <div class="resume-container">
+        <aside class="sidebar">
+            <img src="https://via.placeholder.com/150" alt="Mohanraj Muthusamy" class="profile-img">
+            
+            <h1>MOHANRAJ MUTHUSAMY, PH.D.</h1>
+            <h2>Electrical Engineering Professional</h2>
 
-<main>
-  <section>
-    <h2>Professional Summary</h2>
-    <p>Electrical Engineering professional with 8+ years of expertise in electric motor design, analysis, and validation, specializing in traction applications for commercial vehicles and EVs. Proven track record in leading end-to-end development of high-performance PMSM and WFSM machines, integrating electromagnetic, thermal, and mechanical design considerations. Skilled in 2D/3D FEA, multiphysics optimization, prototyping, and validation. Strong experience collaborating with Tier‑1 suppliers and OEMs, supporting product development cycles with APQP, DFMEA, and DVP&amp;R principles. Adept at guiding cross‑functional teams, mentoring engineers, and delivering client-focused technical solutions. Recognized for bridging advanced research and industrial application through publications, patents, and successful product demonstrations.</p>
-  </section>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i>Montreal, Quebec, Canada</li>
+                <li><i class="fas fa-envelope"></i><a href="mailto:mohanrajmuthu90@gmail.com">mohanrajmuthu90@gmail.com</a></li>
+                <li><i class="fas fa-phone"></i><a href="tel:+14387787188">+1 (438) 778-7188</a></li>
+                <li><i class="fas fa-id-card"></i>Canada: Open Work Permit</li>
+                <li><i class="fas fa-passport"></i>United States: B1/B2 Visa</li>
+            </ul>
 
-  <section>
-    <h2>Education</h2>
-    <p><strong>Ph.D.</strong> – Electrical &amp; Computer Engineering, Concordia University, Montreal, Canada (Sept 2019 – Jul 2023)</p>
-    <p><strong>M.Tech.</strong> – Power Electronics and Drives, Karunya University, Tamil Nadu, India (Aug 2012 – Aug 2014)</p>
-  </section>
+            <ul class="social-links">
+                <li><i class="fab fa-linkedin"></i><a href="#" target="_blank">LinkedIn Profile</a></li>
+                <li><i class="fab fa-github"></i><a href="#" target="_blank">GitHub Portfolio</a></li>
+                <li><i class="fas fa-globe"></i><a href="#" target="_blank">Personal Website</a></li>
+            </ul>
 
-  <section>
-    <h2>Technical Skills</h2>
-    <p><strong>Testing &amp; Simulation Tools:</strong> JMAG (Designer and Express), ANSYS 2D/3D MAXWELL and MotorCAD, MotorSolve, SPEED, MATLAB, Simulink, Python, C‑Program</p>
-    <p><strong>CAD:</strong> SolidWorks, AutoCAD</p>
-    <p><strong>Task Management:</strong> Microsoft Azure, Asana, Microsoft Project</p>
-    <p><strong>Productivity:</strong> Microsoft Word, Excel, PowerPoint, Camtasia</p>
-  </section>
+            <div class="sidebar-section">
+                <h3>Technical Skills</h3>
+                <div class="skills-list">
+                    <strong>Testing & Simulation:</strong>
+                    <p>JMAG (Designer & Express), ANSYS 2D/3D MAXWELL, MotorCAD, MotorSolve, SPEED, MATLAB, Simulink, Python, C-Program</p>
+                    <strong>CAD:</strong>
+                    <p>SolidWorks, AutoCAD</p>
+                    <strong>Task Management:</strong>
+                    <p>Microsoft Azure, Asana, Microsoft Project</p>
+                    <strong>Productivity:</strong>
+                    <p>Microsoft Office Suite, Camtasia</p>
+                </div>
+            </div>
+        </aside>
 
-  <section>
-    <h2>Work Experience</h2>
+        <main class="main-content">
+            <section id="summary">
+                <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+                <p>
+                    Electrical Engineering professional with 8+ years of expertise in electric motor design, analysis, and validation, specializing in traction applications for commercial vehicles and EVs. Proven track record in leading end-to-end development of high-performance PMSM and WFSM machines, integrating electromagnetic, thermal, and mechanical design considerations. Skilled in 2D/3D FEA, multiphysics optimization, prototyping, and validation. Strong experience collaborating with Tier-1 suppliers and OEMs, supporting product development cycles with APQP, DFMEA, and DVP&R principles. Adept at guiding cross-functional teams, mentoring engineers, and delivering client-focused technical solutions. Recognized for bridging advanced research and industrial application through publications, patents, and successful product demonstrations.
+                </p>
+            </section>
+            
+            <section id="experience">
+                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
-    <h3>Postdoctoral Research Fellow · Concordia University, Canada (Jul 2025 – Present)</h3>
-    <ul>
-      <li>Leading advanced research on linear motor design for magnetic levitation applications, integrating electromagnetic, thermal, and mechanical considerations.</li>
-      <li>Supervising and mentoring graduate students on multiple machine design projects, including prototyping, testing, and validation of PMSMs for traction applications.</li>
-      <li>Managing several collaborative projects with industry and academic partners, ensuring alignment with deliverables, timelines, and reporting standards.</li>
-      <li>Driving proposal writing, project planning, and resource management while coordinating across teams, reinforcing leadership and cross‑functional collaboration.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Postdoctoral Research Fellow</h3>
+                        <span class="date">Jul 2025 – Present</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Concordia University</span> – Montreal, Canada</p>
+                    <ul>
+                        <li>Leading advanced research on linear motor design for magnetic levitation applications, integrating electromagnetic, thermal, and mechanical considerations.</li>
+                        <li>Supervising and mentoring graduate students on multiple machine design projects, including prototyping, testing, and validation of PMSMs for traction applications.</li>
+                        <li>Managing several collaborative projects with industry and academic partners, ensuring alignment with deliverables, timelines, and reporting standards.</li>
+                        <li>Driving proposal writing, project planning, and resource management while coordinating across teams, reinforcing leadership and cross-functional collaboration.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Electromagnetic Designer</h3>
+                        <span class="date">Aug 2023 – Jun 2025</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Powersys (AESIM.Tech) – JMAG FEA Software</span> – Montreal, Canada</p>
+                    <ul>
+                        <li>Partnered with Tier-1 suppliers and OEMs across North America, delivering consulting and technical enablement for traction motor projects.</li>
+                        <li>Led advanced design studies on PMSM, WFSM, and induction motors, integrating electromagnetic, thermal, and structural analysis to meet automotive reliability standards.</li>
+                        <li>Developed automation frameworks in Python to accelerate DVP&R simulations, enabling consistent and reproducible workflows for clients.</li>
+                        <li>Delivered client training, webinars, and product demonstrations on JMAG multiphysics simulations, strengthening adoption across design teams.</li>
+                        <li>Acted as a technical advisor for customer projects, supporting DFMEA reviews, validation strategies, and compliance with automotive design standards.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Magnetic Designer</h3>
+                        <span class="date">Jul 2022 – Jun 2023</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">DANA TM4</span> – Montreal, Canada</p>
+                    <ul>
+                        <li>Executed projects for a high-torque, high-power interior Permanent Magnet (PM) motor for commercial trucks, applying optimization techniques to analyze electromagnetic design for global OEM requirements.</li>
+                        <li>Applied standard FEA techniques to refine the design and performance evaluation of thermal management.</li>
+                        <li>Automated safety and transient thermal analysis calculations using Python scripts within Ansys Motor-CAD, optimizing simulation workflows for accelerated timelines.</li>
+                        <li>Utilized JMAG to cross-validate results, including core loss, torque, and duty cycle analyses, documenting results and preparing detailed professional reports.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Ph.D. Research Assistant</h3>
+                        <span class="date">Sept 2019 – Jul 2023</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Concordia University (NRC and Stackpole International)</span> – Boucherville, Quebec</p>
+                    <ul>
+                        <li>Led collaborative R&D projects with NRC and Stackpole on traction motors, balancing academic research with industrial milestones.</li>
+                        <li>Designed, prototyped, and validated a novel 7.1 kW SMC-based spoke-type PM machine for EV applications using 2D/3D FEA and experimental benchmarking.</li>
+                        <li>Investigated hub-less rotor designs and cold-spray magnet integration, achieving improved torque density and reduced harmonic distortion.</li>
+                        <li>Benchmarked and reverse-engineered commercial traction motors (Toyota Prius, Nissan Leaf, Honda Accord) to derive performance metrics and design trade-offs.</li>
+                        <li>Managed material characterization and testing of SMC materials, delivering data for DFMEA and durability assessments.</li>
+                        <li>Mentored graduate students and contributed to teaching, while publishing in IEEE conferences and journals.</li>
+                    </ul>
+                </div>
 
-    <h3>Electromagnetic Designer · Powersys (AESIM.Tech – JMAG FEA Software), Canada (Aug 2023 – Jun 2025)</h3>
-    <ul>
-      <li>Partnered with Tier‑1 suppliers and OEMs across North America, delivering consulting and technical enablement for traction motor projects.</li>
-      <li>Led advanced design studies on PMSM, WFSM, and induction motors, integrating electromagnetic, thermal, and structural analysis to meet automotive reliability standards.</li>
-      <li>Developed automation frameworks in Python to accelerate DVP&amp;R simulations, enabling consistent and reproducible workflows for clients.</li>
-      <li>Delivered client training, webinars, and product demonstrations on JMAG multiphysics simulations, strengthening adoption across design teams.</li>
-      <li>Acted as a technical advisor for customer projects, supporting DFMEA reviews, validation strategies, and compliance with automotive design standards.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Junior Research Fellow</h3>
+                        <span class="date">May 2017 – Jun 2019</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">PSG College of Technology (Electric Motor)</span> – Coimbatore, India</p>
+                    <ul>
+                        <li>Conducted electromagnetic and thermal design of brushless PM and synchronous reluctance machines for automotive and industrial applications.</li>
+                        <li>Developed prototypes and validated in lab and environmental test chambers, ensuring compliance with durability and performance targets.</li>
+                        <li>Reverse-engineered and benchmarked in-wheel hub motors for electric two-wheelers, recommending cost-effective local manufacturing improvements.</li>
+                        <li>Contributed to government-funded project deliverables, producing reports, validation data, and supporting APQP-related milestones.</li>
+                    </ul>
+                </div>
 
-    <h3>Magnetic Designer · DANA TM4, Canada (Jul 2022 – Jun 2023)</h3>
-    <ul>
-      <li>Executed projects for a high‑torque, high‑power interior permanent magnet (PM) motor for commercial trucks, applying optimization techniques to analyze electromagnetic design for global OEM requirements.</li>
-      <li>Applied standard FEA techniques to refine the design and performance evaluation of thermal management.</li>
-      <li>Automated safety and transient thermal analysis calculations using Python scripts within Ansys Motor‑CAD, optimizing simulation workflows for accelerated timelines.</li>
-      <li>Utilized JMAG to cross‑validate results, including core loss, torque, and duty cycle analyses, documenting results and preparing detailed professional reports.</li>
-    </ul>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Lecturer, Electrical and Electronics Engineering</h3>
+                        <span class="date">May 2014 – Jun 2017</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">VSB College of Engineering</span> – Coimbatore, India</p>
+                    <ul>
+                        <li>Delivered lectures, seminars, workshops, and presentations on electric machines, power electronics, and drives.</li>
+                        <li>Designed course materials to enhance student learning and practical application.</li>
+                        <li>Conducted class progress testing, guided experiments, and mentored students in labs and projects.</li>
+                    </ul>
+                </div>
 
-    <h3>Ph.D. Research Assistant · Concordia University (NRC and Stackpole International), Canada (Sept 2019 – Jul 2023)</h3>
-    <ul>
-      <li>Led collaborative R&amp;D projects with NRC and Stackpole on traction motors, balancing academic research with industrial milestones.</li>
-      <li>Designed, prototyped, and validated a novel 7.1 kW SMC‑based spoke‑type PM machine for EV applications using 2D/3D FEA and experimental benchmarking.</li>
-      <li>Investigated hub‑less rotor designs and cold‑spray magnet integration, achieving improved torque density and reduced harmonic distortion.</li>
-      <li>Benchmarked and reverse‑engineered commercial traction motors (Toyota Prius, Nissan Leaf, Honda Accord) to derive performance metrics and design trade‑offs.</li>
-      <li>Managed material characterization and testing of SMC materials, delivering data for DFMEA and durability assessments.</li>
-      <li>Mentored graduate students and contributed to teaching, while publishing in IEEE conferences and journals.</li>
-    </ul>
+            </section>
+            
+            <section id="education">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <h3>Doctor of Philosophy, Electrical and Computer Engineering</h3>
+                        <span class="date">Sept 2019 – Jul 2023</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Concordia University</span> – Montreal, Canada</p>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <h3>Master of Technology, Power Electronics and Drives</h3>
+                        <span class="date">Aug 2012 – Aug 2014</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Karunya University</span> – Tamil Nadu, India</p>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <h3>Bachelor of Engineering, Electrical and Electronics Engineering</h3>
+                        <span class="date">Aug 2008 – Aug 2012</span>
+                    </div>
+                    <p class="item-subheader"><span class="company-highlight">Anna University</span> – Tamil Nadu, India</p>
+                </div>
+            </section>
 
-    <h3>Junior Research Fellow · PSG College of Technology (Electric Motor), India (May 2017 – Jun 2019)</h3>
-    <ul>
-      <li>Conducted electromagnetic and thermal design of brushless PM and synchronous reluctance machines for automotive and industrial applications.</li>
-      <li>Developed prototypes and validated in lab and environmental test chambers, ensuring compliance with durability and performance targets.</li>
-      <li>Reverse‑engineered and benchmarked in‑wheel hub motors for electric two‑wheelers, recommending cost‑effective local manufacturing improvements.</li>
-      <li>Contributed to government‑funded project deliverables, producing reports, validation data, and supporting APQP‑related milestones.</li>
-    </ul>
-
-    <h3>Lecturer, Electrical &amp; Electronics Engineering · VSB College of Engineering, India (May 2014 – Jun 2017)</h3>
-    <ul>
-      <li>Delivered lectures, seminars, workshops, and presentations on electric machines, power electronics, and drives.</li>
-      <li>Designed course materials to enhance student learning and practical application.</li>
-      <li>Conducted class progress testing, guided experiments, and mentored students in labs and projects.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Publications</h2>
-
-    <h3>Conference Papers</h3>
-    <ul>
-      <li>“Design and Optimization of Wound Field Synchronous Machines for Traction Applications”, IEEE International Conference on Transportation Electrification (Illinois, USA, 2024).</li>
-      <li>“Design and Optimization of Wound Field Synchronous Machines with Hybrid Excitations for Traction Applications”, IEEE Energy Conversion Congress and Exposition (Phoenix, USA, 2024).</li>
-      <li>“Effect of Airgap Symmetry on Rotational Iron Losses produced by an Assembled Stator Core”, International Conference on Electrical Machines (Valencia, Spain, 2022).</li>
-      <li>“Design of a Novel SMC Spoke Type PM Machine with Vertical Shaped Copper Conductors”, IEEE Energy Conversion Congress and Exposition (Nashville, TN, 2023).</li>
-      <li>“Design and Analysis of Cobra Shaped Spoke Type Rotor with SMC Stator Core for Traction Applications”, IEEE Energy Conversion Congress and Exposition (Detroit, MI, 2022).</li>
-      <li>“Design Criteria for EV Drivetrain”, IECON (Toronto, Canada, 2021).</li>
-      <li>“Design of an Outer Rotor PMSM with Soft Magnetic Composite Stator Core”, IEEE Energy Conversion Congress and Exposition (2021).</li>
-      <li>“Comparison of Traditional and Quasi‑Z Source Inverters for EV Applications”, North American Power Symposium (2020).</li>
-      <li>“Investigations of Lamination Materials and Rotor Slot Area of Induction Motor with Improved Performance”, IEEE PEDES (2018).</li>
-    </ul>
-
-    <h3>Journal Papers</h3>
-    <ul>
-      <li>“Design of a Spoke Type PMSM With SMC Stator Core for Traction Applications”, IEEE Transactions on Industry Applications (2022).</li>
-      <li>“Impact of Soft Magnetic Composite Material for Traction Applications”, IEEE Transactions on Industry Applications (2025).</li>
-      <li>“Experimental Validation of SMC Spoke Type PMSM with SMC Stator Core for Traction Applications”, accepted for publication, IEEE Transactions on Industry Applications.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Honours &amp; Awards</h2>
-    <ul>
-      <li>Junior Research Fellowship – “Smart Submersible Pumping Solutions for Industrial and Water Supply Applications,” DHI Government of India (2017–2019).</li>
-      <li>Concordia University International Tuition Award of Excellence.</li>
-      <li>Teaching assistantships at Concordia University, Montreal, Canada.</li>
-    </ul>
-  </section>
-
-</main>
+            <section id="publications">
+                <h2><i class="fas fa-book-open"></i> Publications</h2>
+                <h3>Conference Papers</h3>
+                <ul>
+                    <li>M. Muthusamy, et al., "Design and Optimization of Wound Field Synchronous Machines for Traction Applications", 2024, <em>IEEE International Conference on Transportation Electrification</em>, Illinois, USA.</li>
+                    <li>M. Muthusamy, et al., "Design and Optimization of Wound Field Synchronous Machines with Hybrid Excitations for Traction Applications", 2024, <em>IEEE Energy Conversion Congress and Exposition (ECCE)</em>, Phoenix, USA.</li>
+                    <li>S. B. Abdel-Maged, M. Muthusamy, and P. Pillay, "Effect of Airgap Symmetry on Rotational Iron Losses produced by an Assembled Stator Core," 2022, <em>International Conference on Electrical Machines (ICEM)</em>, Valencia, Spain.</li>
+                    <li>M. Muthusamy, et al., "Design of a Novel SMC Spoke Type PM Machine with Vertical Shaped Copper Conductors," 2023 <em>IEEE Energy Conversion Congress and Exposition (ECCE)</em>, Nashville, TN.</li>
+                    <li>M. Muthusamy and P. Pillay, "Design and analysis of cobra shaped spoke type rotor with SMC stator core for traction applications," 2022 <em>IEEE Energy Conversion Congress and Exposition (ECCE)</em>, Detroit, MI.</li>
+                    <li>T. Payaro, S. Singh, M. Muthusamy, and P. Pillay, "Design Criteria for EV Drivetrain," <em>IECON 2021</em>, Toronto, Canada.</li>
+                    <li>M. Muthusamy and P. Pillay, "Design of an Outer Rotor PMSM with Soft Magnetic Composite Stator Core," 2021 <em>IEEE Energy Conversion Congress and Exposition (ECCE)</em>.</li>
+                    <li>M. Muthusamy and A. Chandwani, "Comparison of Traditional and Quasi-Z Source Inverters for EV Applications," 2020 <em>North American Power Symposium (NAPS)</em>.</li>
+                    <li>M. Sundaram, M. Mohanraj, J. J. Brislin, and P. Varunraj, "Investigations of lamination materials and rotor slot area of induction motor with improved performance," 2018 <em>IEEE PEDES</em>.</li>
+                </ul>
+                <h3>Journal Papers</h3>
+                <ul>
+                    <li>M. Muthusamy, J. Hendershot, and P. Pillay, "Design of a Spoke Type PMSM With SMC Stator Core for Traction Applications," <em>IEEE Transactions on Industry Applications</em>, 2022.</li>
+                    <li>M. Muthusamy, et al., "Impact of Soft Magnetic Composite Material for Traction Applications," <em>IEEE Transactions on Industry Applications</em>, 2025.</li>
+                    <li>M. Muthusamy, et al., "Experimental Validation of SMC Spoke Type PMSM with SMC Stator Core for Traction Applications," accepted, <em>IEEE Transactions on Industry Applications</em>.</li>
+                </ul>
+            </section>
+            
+            <section id="awards">
+                <h2><i class="fas fa-award"></i> Honours and Awards</h2>
+                <ul>
+                    <li>Junior Research Fellowship – "Smart Submersible Pumping Solutions for Industrial and Water Supply Applications," DHI Government of India (2017–2019).</li>
+                    <li>Concordia University International Tuition Award of Excellence.</li>
+                    <li>Teaching assistantships at Concordia University, Montreal, Canada.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
 </body>
 </html>
