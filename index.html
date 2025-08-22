@@ -1,247 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mohanraj Muthusamy, Ph.D.</title>
-<meta name="description" content="Mohanraj Muthusamy — Electric motor design for traction applications (PMSM, WFSM). Research, experience, publications, and contact." />
-<style>
-  :root{
-    --bg:#0b0c10; --card:#0f1117; --ink:#e6e8ee; --muted:#9aa4b2; --brand:#6ee7ff;
-    --accent:#a5b4fc; --line:#1e2230; --link:#8ab4ff; --chip:#151a25;
-    --left: 260px; --right: 280px; --gap: 22px; --max: 1400px;
-  }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#ffffff; --card:#f7f8fb; --ink:#0f172a; --muted:#475569; --line:#e5e7eb; --link:#1d4ed8; --chip:#eef2ff;}
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohanraj Muthusamy, Ph.D.</title>
+  <meta name="description" content="Mohanraj Muthusamy — Electric motor design for traction applications (PMSM, WFSM). Research, experience, publications, and contact." />
 
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif}
-  a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .page{max-width:var(--max);margin:0 auto;padding:24px}
-  .grid{
-    display:grid;grid-template-columns: var(--left) 1fr var(--right);gap:var(--gap);
-  }
-  /* Left sidebar (sticky nav) */
-  .left{
-    position:sticky;top:16px;height:min-content;background:var(--card);
-    border:1px solid var(--line);border-radius:16px;padding:16px
-  }
-  .left h1{font-size:22px;line-height:1.2;margin:0 0 6px}
-  .role{color:var(--muted);font-size:14px;margin-bottom:10px}
-  .nav{display:flex;flex-direction:column;gap:6px;margin-top:8px}
-  .nav a{padding:8px 10px;border-radius:10px;color:var(--ink);border:1px solid transparent}
-  .nav a:hover{border-color:var(--line);background:var(--chip)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px}
+  <!-- Open Graph (social previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mohanraj Muthusamy, Ph.D." />
+  <meta property="og:description" content="Electric motor design for traction applications (PMSM, WFSM). Research, experience, publications, and contact." />
+  <meta property="og:image" content="Mohan.jpeg" />
+  <meta property="og:image:alt" content="Portrait of Mohanraj Muthusamy" />
+  <meta property="og:image:type" content="image/jpeg" />
 
-  /* Main content */
-  .main{display:flex;flex-direction:column;gap:18px}
-  section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px}
-  section h2{margin:0 0 10px;font-size:18px;border-left:4px solid var(--accent);padding-left:10px}
-  p{margin:10px 0}
-  ul{margin:8px 0 0 20px}
-  li{margin:6px 0}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .pills .pill{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:14px;padding:4px 9px;margin:4px 6px 0 0;font-size:12px}
-  .meta{color:var(--muted);font-size:13px}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mohanraj Muthusamy, Ph.D." />
+  <meta name="twitter:description" content="Electric motor design for traction applications (PMSM, WFSM). Research, experience, publications, and contact." />
+  <meta name="twitter:image" content="Mohan.jpeg" />
 
-  /* Right sidebar (quick info) */
-  .right{position:sticky;top:16px;height:min-content;display:flex;flex-direction:column;gap:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
-  .card h3{margin:0 0 8px;font-size:16px}
-  .mini{font-size:14px;color:var(--muted)}
-  .list{display:grid;gap:8px}
-  .list a{display:inline-flex;align-items:center;gap:8px}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);display:inline-block}
-  .divider{height:1px;background:var(--line);margin:8px 0}
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#0f1117; --ink:#e6e8ee; --muted:#9aa4b2; --brand:#6ee7ff;
+      --accent:#a5b4fc; --line:#1e2230; --link:#8ab4ff; --chip:#151a25;
+      --left: 260px; --right: 280px; --gap: 22px; --max: 1400px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --card:#f7f8fb; --ink:#0f172a; --muted:#475569; --line:#e5e7eb; --link:#1d4ed8; --chip:#eef2ff;}
+    }
 
-  footer{grid-column: 1 / -1; color:var(--muted);text-align:center;margin-top:22px}
-  /* Mobile */
-  @media (max-width: 1100px){
-    .grid{grid-template-columns:1fr;gap:16px}
-    .left,.right{position:static}
-  }
-</style>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .page{max-width:var(--max);margin:0 auto;padding:24px}
+    .grid{
+      display:grid;grid-template-columns: var(--left) 1fr var(--right);gap:var(--gap);
+    }
+
+    /* Left sidebar (sticky nav) */
+    .left{
+      position:sticky;top:16px;height:min-content;background:var(--card);
+      border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center;
+    }
+    .left h1{font-size:22px;line-height:1.2;margin:0 0 6px}
+    .role{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .nav{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+    .nav a{padding:8px 10px;border-radius:10px;color:var(--ink);border:1px solid transparent}
+    .nav a:hover{border-color:var(--line);background:var(--chip)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+    /* Profile image */
+    .profile{
+      width:140px;height:140px;border-radius:50%;
+      object-fit:cover;display:block;margin:0 auto 12px;
+      border:3px solid var(--line);transition:transform .25s ease;
+    }
+    .profile:hover{ transform:scale(1.05); }
+
+    /* Main + aside */
+    main section{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    main h2{font-size:20px;margin-bottom:8px}
+    aside{
+      background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;height:fit-content
+    }
+    aside h3{margin-top:0;font-size:18px}
+
+    /* Small screens */
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr;gap:16px}
+      .left{position:static}
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <div class="grid">
+      <!-- Left sidebar -->
+      <div class="left">
+        <img src="Mohan.jpeg" alt="Mohanraj Muthusamy" class="profile" />
+        <h1>Mohanraj Muthusamy, Ph.D.</h1>
+        <div class="role">Electric Motor Design Engineer</div>
 
-<div class="page grid">
-  <!-- LEFT SIDEBAR -->
-  <aside class="left">
-    <h1>Mohanraj Muthusamy, Ph.D.</h1>
-    <div class="role">Electric Motor Design · Traction (PMSM, WFSM) · Montreal</div>
-
-    <div class="chips">
-      <a class="chip" href="mailto:mohanrajmuthu90@gmail.com">Email</a>
-      <a class="chip" href="https://scholar.google.com/citations?user=6wxD5voAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-      <a class="chip" href="https://linkedin.com/in/mohanraj-muthusamy-51b3431b0?originalSubdomain=ca" target="_blank" rel="noopener">LinkedIn</a>
-      <button class="chip" onclick="window.print()">Print / Save PDF</button>
-    </div>
-
-    <div class="divider"></div>
-
-    <nav class="nav">
-      <a href="#bio">Biography</a>
-      <a href="#skills">Technical Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#publications">Publications</a>
-      <a href="#awards">Honours & Awards</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="main">
-    <section id="bio">
-      <h2>Biography</h2>
-      <p>Electrical engineering professional with 8+ years in <strong>electric motor design, analysis, and validation</strong> for traction applications in commercial vehicles and EVs. Work spans high-performance
-        <strong>PMSM</strong> and <strong>WFSM</strong> machines with electromagnetic, thermal, and mechanical co-design. Skilled in <strong>2D/3D FEA</strong>, multiphysics optimization, prototyping, and validation.
-        Experienced with Tier-1 suppliers/OEMs and product development frameworks: <strong>APQP</strong>, <strong>DFMEA</strong>, and <strong>DVP&amp;R</strong>.
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="two">
-        <div class="pills">
-          <p class="meta"><strong>Simulation</strong></p>
-          <span class="pill">JMAG (Designer/Express)</span>
-          <span class="pill">ANSYS Maxwell 2D/3D</span>
-          <span class="pill">Motor-CAD</span>
-          <span class="pill">MotorSolve</span>
-          <span class="pill">SPEED</span>
-          <span class="pill">MATLAB / Simulink</span>
-          <span class="pill">Python</span>
-          <span class="pill">C</span>
+        <div class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="pills">
-          <p class="meta"><strong>CAD & Productivity</strong></p>
-          <span class="pill">SolidWorks</span>
-          <span class="pill">AutoCAD</span>
-          <span class="pill">Azure</span>
-          <span class="pill">Asana</span>
-          <span class="pill">MS Project</span>
-          <span class="pill">Word</span>
-          <span class="pill">Excel</span>
-          <span class="pill">PowerPoint</span>
-          <span class="pill">Camtasia</span>
+
+        <div class="chips" aria-label="Skills">
+          <span>JMAG</span><span>Motor-CAD</span><span>ANSYS Maxwell</span>
+          <span>PMSM</span><span>WFSM</span><span>Optimization</span>
         </div>
       </div>
-    </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
+      <!-- Middle content -->
+      <main>
+        <section id="about">
+          <h2>About</h2>
+          <p>I am an electric motor design engineer specializing in traction applications (PMSM, WFSM). My work spans advanced simulation, optimization, and bridging research with industrial deployment.</p>
+        </section>
 
-      <p><strong>Postdoctoral Research Fellow</strong> · Concordia University — Montreal, Canada <span class="meta">(Jul 2025 – Present)</span></p>
-      <ul>
-        <li>Research on flat linear PM machines for MagLev; EM-thermal-mechanical coupling.</li>
-        <li>Supervised graduate projects on PMSM prototyping, testing, and validation.</li>
-        <li>Led proposals and cross-functional collaboration with academic/industry partners.</li>
-      </ul>
+        <section id="experience">
+          <h2>Experience</h2>
+          <p><strong>Postdoctoral Research Fellow</strong> — Concordia University (Current). Research on spoke-type PM machines, hub-less rotor concepts, and SMC materials.</p>
+          <p><strong>Motor Design Engineer</strong> — Powersys (JMAG). Supported Tier-1s & OEMs across U.S./Canada in design, simulation, and multiphysics optimization.</p>
+          <p><strong>Motor Design Engineer (Intern)</strong> — DANA TM4. Heavy-duty traction motor design and manufacturing exposure.</p>
+        </section>
 
-      <p><strong>Electromagnetic Designer</strong> · Powersys (AESIM.Tech – JMAG) — Montreal, Canada <span class="meta">(Aug 2023 – Jun 2025)</span></p>
-      <ul>
-        <li>Consulted Tier-1/OEMs; delivered trainings and demos on JMAG multiphysics.</li>
-        <li>Led PMSM/WFSM/IM studies with EM–thermal–structural integration.</li>
-        <li>Built Python automation to accelerate DVP&amp;R workflows.</li>
-      </ul>
+        <section id="publications">
+          <h2>Publications</h2>
+          <ul>
+            <li>Multi-Objective Multiphysics Optimization of Spoke-Type PM Machines — IEEE TIE (2023)</li>
+            <li>Hub-less Spoke-Type Rotor Design for EV Traction — IET EPE</li>
+            <li>SMC Material Characterization for Electric Machines — IEEE ECCE</li>
+          </ul>
+        </section>
 
-      <p><strong>Magnetic Designer</strong> · DANA TM4 — Montreal, Canada <span class="meta">(Jul 2022 – Jun 2023)</span></p>
-      <ul>
-        <li>Optimization for high-torque interior PM motor for commercial trucks.</li>
-        <li>Automated Motor-CAD analyses; cross-validated with JMAG.</li>
-      </ul>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+          <p>GitHub: <a href="https://github.com/yourgithub" target="_blank" rel="noopener">github.com/yourgithub</a></p>
+        </section>
+      </main>
 
-      <p><strong>Ph.D. Research Assistant</strong> · Concordia University (NRC & Stackpole) — Quebec, Canada <span class="meta">(Sep 2019 – Jul 2023)</span></p>
-      <ul>
-        <li>Designed, prototyped, and validated a 7.1 kW SMC spoke-type PM machine.</li>
-        <li>Investigated hub-less rotors & cold-spray magnets; improved torque density.</li>
-        <li>Benchmarked commercial traction motors (Prius, Leaf, Accord).</li>
-      </ul>
-
-      <p><strong>Junior Research Fellow</strong> · PSG College of Technology — India <span class="meta">(May 2017 – Jun 2019)</span></p>
-      <ul><li>EM & thermal design of BLPM and SynRel machines; lab and chamber validation.</li></ul>
-
-      <p><strong>Lecturer (EEE)</strong> · VSB College of Engineering — India <span class="meta">(May 2014 – Jun 2017)</span></p>
-      <ul><li>Teaching, labs, and mentoring in electric machines, power electronics, and drives.</li></ul>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Ph.D., Electrical & Computer Engineering</strong> — Concordia University, Montreal (2023)</li>
-        <li><strong>M.Tech., Power Electronics & Drives</strong> — Karunya University, India (2014)</li>
-      
-      </ul>
-    </section>
-
-    <section id="publications">
-      <h2>Publications (selected)</h2>
-      <ul>
-        <li>“Design of a Spoke Type PMSM With SMC Stator Core for Traction Applications,” <em>IEEE Trans. on Industry Applications</em>, 2022.</li>
-        <li>“Impact of Soft Magnetic Composite Material for Traction Applications,” <em>IEEE Trans. on Industry Applications</em>, 2025.</li>
-        <li>“Experimental Validation of SMC Spoke Type PMSM with SMC Stator Core for Traction Applications,” <em>IEEE Trans. on Industry Applications</em> (accepted).</li>
-        <li>“Design of a Novel SMC Spoke Type PM Machine…,” <em>IEEE ECCE</em>, 2023.</li>
-        <li>“Cobra-shaped Spoke Type Rotor…,” <em>IEEE ECCE</em>, 2022.</li>
-        <li>“Design Criteria for EV Drivetrain,” <em>IECON</em>, 2021.</li>
-      </ul>
-    </section>
-
-    <section id="awards">
-      <h2>Honours & Awards</h2>
-      <ul>
-        <li>Junior Research Fellowship — DHI, Government of India (2017–2019).</li>
-        <li>International Tuition Award of Excellence — Concordia University.</li>
-        <li>Teaching Assistantships — Concordia University.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:mohanrajmuthu90@gmail.com">mohanrajmuthu90@gmail.com</a></p>
-      <p>Location: Montreal, Quebec, Canada · </p>
-    </section>
-  </main>
-
-  <!-- RIGHT SIDEBAR -->
-  <aside class="right">
-    <div class="card">
-      <h3>Quick Facts</h3>
-      <div class="list">
-        <span><span class="dot"></span> 8+ years — traction motors</span>
-        <span><span class="dot"></span> PMSM / WFSM / SynRel</span>
-        <span><span class="dot"></span> JMAG · Maxwell · Motor-CAD</span>
-        <span><span class="dot"></span> MATLAB/Simulink · Python</span>
-      </div>
-      <div class="divider"></div>
-      <div class="mini">Last updated: <span id="upd"></span></div>
+      <!-- Right sidebar -->
+      <aside>
+        <h3>Highlights</h3>
+        <ul>
+          <li>Ph.D. in Electric Motor Design</li>
+          <li>Expert in PMSM & WFSM traction machines</li>
+          <li>JMAG • Motor-CAD • ANSYS Maxwell</li>
+          <li>Research ↔ Industry collaboration</li>
+        </ul>
+      </aside>
     </div>
-
-    <div class="card">
-      <h3>Downloads</h3>
-      <p class="mini">Want a one-pager? Print to PDF.</p>
-      <button class="chip" onclick="window.print()">Print / Save PDF</button>
-    </div>
-
-    <div class="card">
-      <h3>Profiles</h3>
-      <div class="list">
-        <a href="https://scholar.google.com/citations?user=6wxD5voAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="https://linkedin.com/in/mohanraj-muthusamy-51b3431b0?originalSubdomain=ca" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:mohanrajmuthu90@gmail.com">Email</a>
-      </div>
-    </div>
-  </aside>
-
-  <footer>© <span id="y"></span> Mohanraj Muthusamy</footer>
-</div>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  document.getElementById('upd').textContent = new Date().toLocaleDateString();
-</script>
+  </div>
 </body>
 </html>
